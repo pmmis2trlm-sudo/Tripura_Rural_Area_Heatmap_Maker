@@ -150,7 +150,7 @@ textarea{width:100%;height:110px;font-family:Consolas,monospace;font-size:12px;b
     </div>
   </div>
 </div>
-<footer class="foot">Designed by: <b>Debashish Datta</b></footer>
+<footer class="foot">Designed by: <b>Debashish Datta, PM MIS-LH, TRLM</b></footer>
 <div id="tip"></div>
 
 <script>
@@ -387,7 +387,7 @@ const fname=e=>"tripura_"+(isD()?"district_":curDist()?curDist().toLowerCase().r
 $("expCsv").onclick=()=>{const T=S.title.replace(/,/g," ")+(S.mode==="pct"?" (%)":"");let c;
   if(isD()){c=`District,Blocks,${T},Source,Range\n`;DISTS.forEach(d=>{const v=dval(d),k=classOf(v);c+=`${d},${DISTRICT[d].length},${has(v)?v:""},${isManual(d)?"Entered":"Auto ("+S.dagg+")"},${k>=0?rangeLabel(k):""}\n`;});}
   else{c=`Block,District,${T},Range\n`;units().forEach(b=>{const k=classOf(S.values[b]);c+=`${b},${distOf[b]},${S.values[b]??""},${k>=0?rangeLabel(k):""}\n`;});}
-  c+=`\nDesigned by: Debashish Datta\n`;
+  c+=`\nDesigned by: Debashish Datta, PM MIS-LH, TRLM\n`;
   dl(new Blob([c],{type:"text/csv"}),fname("csv").replace("_map","_data"));};
 function parseData(txt){let ok=0,okD=0,miss=[];const D=isD();
   txt.split(/\r?\n/).forEach(line=>{if(!line.trim())return;const p=line.split(/\t|,|;/).map(s=>s.trim().replace(/^"|"$/g,""));if(p.length<2)return;
